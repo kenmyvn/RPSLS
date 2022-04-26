@@ -3,13 +3,13 @@ from player import Player
 from time import sleep
 
 class Human(Player):
-    def __init__(self, name):
+    def __init__(self):
         super().__init__()
-        self.name = name
+        self.score = 0
 
 
     def human_choice(self):
-        self.human_choice = (input('Please select Rock, Paper, Scissors, Lizard, or Spock: '))
+        self.choice = input('Please select Rock, Paper, Scissors, Lizard, or Spock: ')
         sleep(1)
-        print(f'(self.name) has chosen {self.human_choice}')
+        print(f'Human has chosen {self.choice}')
     

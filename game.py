@@ -32,7 +32,8 @@ class Game:
         sleep(0.5)
         print('Spock vaporizes Rock')
         print('')
-        self.answer = print(int(input('Press 1 for Human vs. AI, Press 2 for Human vs. Human: ')))
+        print('Press 1 for Human vs. AI, press 2 for Human vs. Human: ')
+        self.answer = int(input())
         self.human_or_ai()
 
     def human_or_ai(self):
@@ -40,6 +41,18 @@ class Game:
             self.ai_game()
         elif self.answer == 2:
             self.human_game()
+        elif self.answer != 1 or 2:
+            print("Please start over.")
+            self.run_game()
 
+    def ai_game(self):
+        self.determine_ai_winner()
     
+    def determine_ai_winner(self):
+        ai = AI()
+        ai.ai_choice()
+        if ai.choice == 'rock':
+            
+        else:
+            print('just testing')
     

@@ -4,11 +4,11 @@ import random
 from time import sleep
 
 class AI(Player):
-    def __init__(self, name):
+    def __init__(self):
         super().__init__()
-        self.name = name
+        self.score = 0
 
     def ai_choice(self):
-        self.ai_choice = random.choice(self.choices)
+        self.choice = random.choice(self.choices)
         sleep(1)
-        print(f'(self.name) has chosen {self.ai_choice}')
+        print(f'AI has chosen {self.choice}')
