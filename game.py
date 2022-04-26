@@ -1,5 +1,6 @@
 
 from human import Human
+from ai import AI
 from time import sleep
 
 class Game:
@@ -31,9 +32,14 @@ class Game:
         sleep(0.5)
         print('Spock vaporizes Rock')
         print('')
-        print(input('Press 1 for Human vs. AI, Press 2 for Human vs. Human: '))
+        self.answer = print(int(input('Press 1 for Human vs. AI, Press 2 for Human vs. Human: ')))
         self.human_or_ai()
 
     def human_or_ai(self):
-        
+        if self.answer == 1:
+            self.ai_game()
+        elif self.answer == 2:
+            self.human_game()
 
+    
+    
