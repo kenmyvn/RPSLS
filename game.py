@@ -1,4 +1,5 @@
 
+from human import Human
 from time import sleep
 
 class Game:
@@ -31,7 +32,7 @@ class Game:
         print('Spock vaporizes Rock')
         print('')
         print(input('Press 1 for Human vs. AI, Press 2 for Human vs. Human: '))
-        self.human_or_ai
+        self.human_or_ai()
 
     def human_or_ai(self):
         
