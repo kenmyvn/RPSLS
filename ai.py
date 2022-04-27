@@ -9,16 +9,7 @@ class AI(Player):
 
 
     def ai_choice(self):
-        self.choice = random.randint(1,5)
+        n = random.randint(0,4)
+        self.choice = self.list[n]
         sleep(1)
-        if self.choice == 1:
-            print("AI has chosen Rock")
-        elif self.choice == 2:
-            print("AI has chosen Paper")
-        elif self.choice == 3:
-            print("AI has chosen Scissors")
-        elif self.choice == 4:
-            print("AI has chosen Lizard")
-        elif self.choice == 5:
-            print("AI has chosen Spock")
-        return self.choice
+        print(f"AI has chosen {self.choice}")
