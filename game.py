@@ -3,10 +3,15 @@ from human import Human
 from ai import AI
 from time import sleep
 
+
+human = Human()
+ai = AI()
+
+
 class Game:
     def __init__(self):
-        return
-    
+        self.score = 0
+
     def run_game(self):
         print('Welcome to RPSLS!')
         sleep(0.5)
@@ -50,16 +55,50 @@ class Game:
         self.determine_ai_winner()
     
     def determine_ai_winner(self):
-        human = Human()
         human.human_choice()
-        ai = AI()
         ai.ai_choice()
         if ai.choice == human.choice:
             print('Tie! Try again')
             self.determine_ai_winner()
+        elif human.choice == 1 and ai.choice == 3 or ai.choice == 4:
+            print("Human wins.")
+            human.score + 1
+            self.test_winner()
+        elif human.choice == 2 and ai.choice == 1 or ai.choice == 5:
+            print("Human wins.")
+            human.score + 1
+            self.test_winner()
+        elif human.choice == 3 and ai.choice == 2 or ai.choice == 4:
+            print("Human wins.")
+            human.score + 1
+            self.test_winner()
+        elif human.choice == 4 and ai.choice == 2 or ai.choice == 5:
+            print("Human wins.")
+            human.score + 1
+            self.test_winner()
+        elif human.choice == 5 and ai.choice == 1 or ai.choice == 3:
+            print("Human wins.")
+            human.score + 1
+            self.test_winner()
         else:
-            print('testing')
-            self.determine_ai_winner()
+            ai.score + 1
+            print("AI wins.")
+            self.test_winner()
+        # else:
+        #     print('Type a proper number! Start over now~~')
+        #     self.determine_ai_winner()
+
+    def test_winner(self):
+        if human.choice == 2:
+            print('Human wins!')
+            return
+        if ai.choice == 2:
+            print('AI wins!')
+            return
+
+
+
+
     
 # when coming back to this! hello wednesday kendall. you have numbers now. make sure to loop a score so that it adds and when it gets to 2, break.
 # configure ai vs human and then rework that into human vs human
