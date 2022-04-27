@@ -46,6 +46,7 @@ class Game:
             self.run_game()
 
     def ai_game(self):
+        print('')
         self.determine_ai_winner()
     
     def determine_ai_winner(self):
@@ -53,9 +54,12 @@ class Game:
         human.human_choice()
         ai = AI()
         ai.ai_choice()
-        if ai.choice == 'Rock':
-            print('just testing')
+        if ai.choice == human.choice:
+            print('Tie! Try again')
+            self.determine_ai_winner()
         else:
-            print('Please try again! (Capitalize the first letter!)')
+            print('testing')
             self.determine_ai_winner()
     
+# when coming back to this! hello wednesday kendall. you have numbers now. make sure to loop a score so that it adds and when it gets to 2, break.
+# configure ai vs human and then rework that into human vs human
