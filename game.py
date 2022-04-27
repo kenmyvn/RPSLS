@@ -49,10 +49,13 @@ class Game:
         self.determine_ai_winner()
     
     def determine_ai_winner(self):
+        human = Human()
+        human.human_choice()
         ai = AI()
         ai.ai_choice()
-        if ai.choice == 'rock':
-            
-        else:
+        if ai.choice == 'Rock':
             print('just testing')
+        else:
+            print('Please try again! (Capitalize the first letter!)')
+            self.determine_ai_winner()
     
