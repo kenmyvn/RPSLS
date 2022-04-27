@@ -60,41 +60,46 @@ class Game:
         if ai.choice == human.choice:
             print('Tie! Try again')
             self.determine_ai_winner()
-        elif human.choice == 1 and ai.choice == 3 or ai.choice == 4:
+        elif human.choice == 1 and (ai.choice == 3 or ai.choice == 4):
             print("Human wins.")
-            human.score + 1
-            self.test_winner()
-        elif human.choice == 2 and ai.choice == 1 or ai.choice == 5:
+            human.score += 1
+            self.test_ai_winner()
+        elif human.choice == 2 and (ai.choice == 1 or ai.choice == 5):
             print("Human wins.")
-            human.score + 1
-            self.test_winner()
-        elif human.choice == 3 and ai.choice == 2 or ai.choice == 4:
+            human.score += 1
+            self.test_ai_winner()
+        elif human.choice == 3 and (ai.choice == 2 or ai.choice == 4):
             print("Human wins.")
-            human.score + 1
-            self.test_winner()
-        elif human.choice == 4 and ai.choice == 2 or ai.choice == 5:
+            human.score += 1
+            self.test_ai_winner()
+        elif human.choice == 4 and (ai.choice == 2 or ai.choice == 5):
             print("Human wins.")
-            human.score + 1
-            self.test_winner()
-        elif human.choice == 5 and ai.choice == 1 or ai.choice == 3:
+            human.score += 1
+            self.test_ai_winner()
+        elif human.choice == 5 and (ai.choice == 1 or ai.choice == 3):
             print("Human wins.")
-            human.score + 1
-            self.test_winner()
+            human.score += 1
+            self.test_ai_winner()
         else:
-            ai.score + 1
+            ai.score += 1
             print("AI wins.")
-            self.test_winner()
+            self.test_ai_winner()
         # else:
         #     print('Type a proper number! Start over now~~')
         #     self.determine_ai_winner()
 
-    def test_winner(self):
-        if human.choice == 2:
-            print('Human wins!')
-            return
-        if ai.choice == 2:
+    def test_ai_winner(self):
+        if human.score == 1:
+            print('You almost got this human!')
+            self.determine_ai_winner()
+        if human.score == 2:
+            print('Human wins the game!')
+        if ai.score == 1:
+            print('You almost got this AI!')
+            self.determine_ai_winner()
+        if ai.score == 2:
             print('AI wins!')
-            return
+
 
 
 
